@@ -1,5 +1,18 @@
 import random
 
+flag = True 
+
+while flag:
+    num = print("Enter an Upper bound: ")
+    if num.isdigit():
+        print("Ready to play")
+        num = int(num)
+        flag = False
+    else:
+        print("Try to enter a number above zero")
+        
+    
+    
 secret_number = random.randint(0,100)
 
 guess = None
