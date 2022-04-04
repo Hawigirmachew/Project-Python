@@ -11,6 +11,10 @@ for i in range(attempt):
         print("You win!")
         break
     else:
+        if guess > num:
+            print(str(guess) + " is larger")
+        else:
+            print(str(guess) + " is smaller")
         print("Try again!")
         attempt-=1
         continue
