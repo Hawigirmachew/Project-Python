@@ -6,7 +6,7 @@ import random
 root = Tk()
 root.title("Python game")
 root.geometry("400x400")
-root['bg']='yellow'
+root['bg']='#0fffff'
 
 secret =random.randint(1,10)
 number = IntVar()
@@ -23,7 +23,7 @@ def compare_and_check():
             msg= "You won!"
         elif secret >user_input :
             attempt-= 1
-            msg = "Number is lesser than the secret number"
+            
         elif secret < user_input :
             attempt -=1
             msg = "Number is greater than the secret number"
@@ -33,51 +33,40 @@ def compare_and_check():
         msg="Sorry you  lost the game"
     display.set(msg)    
 
-
-
-
-
 #title 
 Label(
     root,
     text="Number Guessing Game",
     font="Times 20",
-    fg="brown",
-    relief="raised"
+    fg="#000",
+    relief="raised",
+    #bg="black"
 ).pack(pady=10)
-  
+Label(
+    root,
+    text="Enter a number between 1 and 10",
+    font ="Times 20",
+    relief="flat",
+    fg="#000",
+    #bg="#000"
+).pack(pady=5)
 Entry(
     root,
     textvariable= number,
     font=("san sarif",20)
-).pack(pady=(40,20)) 
+).pack(pady=(30,10)) 
 Button(
     root,
     text="Sumbit Guess",
     font=("Times 20"),
     command= compare_and_check
-).pack(pady=(60,20))
+).pack(pady=30)
 
 Label(
     root,
     font=("helvetica 16"),
     textvariable= display
 ).pack(pady=(10,5))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #main loop   
 root.mainloop()
